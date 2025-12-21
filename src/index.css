@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* AURELIS Color Palette */
+    --background: 40 33% 97%;
+    --foreground: 0 0% 10%;
+
+    --card: 40 20% 95%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 40 33% 97%;
+    --popover-foreground: 0 0% 10%;
+
+    /* Deep Burgundy - Primary */
+    --primary: 0 100% 17%;
+    --primary-foreground: 40 33% 97%;
+
+    /* Champagne Nude - Secondary */
+    --secondary: 35 30% 90%;
+    --secondary-foreground: 0 100% 17%;
+
+    /* Muted champagne tones */
+    --muted: 35 20% 92%;
+    --muted-foreground: 0 0% 40%;
+
+    /* Gold Accent */
+    --accent: 43 52% 54%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 0 100% 17%;
+
+    --radius: 0px;
+
+    /* Custom tokens */
+    --gold: 43 52% 54%;
+    --cream: 40 33% 97%;
+    --champagne: 35 30% 90%;
+    --burgundy: 0 100% 17%;
+    --burgundy-light: 0 60% 25%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 40 33% 97%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 40 33% 97%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 40 33% 97%;
+
+    --primary: 40 33% 97%;
+    --primary-foreground: 0 100% 17%;
+
+    --secondary: 0 20% 15%;
+    --secondary-foreground: 40 33% 97%;
+
+    --muted: 0 10% 20%;
+    --muted-foreground: 40 20% 70%;
+
+    --accent: 43 52% 54%;
+    --accent-foreground: 0 0% 5%;
+
+    --border: 0 10% 20%;
+    --input: 0 10% 20%;
+    --ring: 43 52% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+  }
+
+  ::selection {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Jost', sans-serif;
+  }
+
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+
+  .bg-gold {
+    background-color: hsl(var(--gold));
+  }
+
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+
+  /* Elegant underline animation */
+  .link-underline {
+    position: relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: hsl(var(--primary));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Gold underline variant */
+  .link-underline-gold::after {
+    background: hsl(var(--gold));
+  }
+}
+
+@layer utilities {
+  /* Fade in animations */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes subtle-float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .animate-subtle-float {
+    animation: subtle-float 6s ease-in-out infinite;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+}
