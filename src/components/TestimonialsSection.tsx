@@ -6,7 +6,7 @@ interface TestimonialsSectionProps {
 
 const testimonials = [
   {
-    quote: 'Proces je bio neočekivano miran. Svaka odluka je bila promišljena, svaki detalj namjeran.',
+    quote: 'Proces je bio tih, jasan i potpuno promišljen. Ništa nije bilo suvišno, ni u komunikaciji, ni u dizajnu.',
     author: 'Una',
     brand: 'Studio Una'
   },
