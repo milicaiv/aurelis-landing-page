@@ -41,7 +41,7 @@ const AboutSection = ({ id }: AboutSectionProps) => {
               viđen, shvaćen i upamćen.
             </p>
             <p className="font-body text-base lg:text-lg text-muted-foreground leading-relaxed">
-              Mi smo premium studio za vizuelni identitet sa sjedištem u Bosni i Hercegovini, 
+              Mi smo premium studio vizuelnog identiteta sa sjedištem u Bosni i Hercegovini, 
               specijaliziran za kreiranje prepoznatljivih brendovnih iskustava koja 
               nadilaze trendove i odolijevaju zubu vremena.
             </p>

@@ -12,7 +12,7 @@ const Footer = () => {
 
           {/* Tagline */}
           <p className="font-display text-sm italic text-muted-foreground">
-            Studio za Vizuelni Identitet
+            Studio Vizuelnog Identiteta
           </p>
 
           {/* Copyright */}
